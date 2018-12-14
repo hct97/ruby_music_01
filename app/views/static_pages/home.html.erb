@@ -34,9 +34,9 @@
         <% @list_songs.each.with_index(0) do |list, index| %>
         <li class="items d-flex align-items-center">
           <% if index % 2 == 0 %>
-            <%= link_to image_tag("noel", class: "avatar"), "#" %>
+            <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1544409639/v1/album/s0/0/20/953/21947798.jpg", class: "avatar"), song_path(list.id) %>
           <% else %>
-            <%= link_to image_tag("vnvd", class: "avatar"), "#" %>
+            <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1544613517/v1/album/s0/0/23/79/24198411.jpg", class: "avatar"), song_path(list.id) %>
           <% end %>
           <div class="present">
             <%= link_to list.title, song_path(list.id), class: "name" %>
@@ -62,9 +62,9 @@
     <% @list_genres.each.with_index(0) do |list_genres, index| %>
       <div class="card text-center mb-3" style="width:190px; height: 245px">
         <% if index % 2 == 0 %>
-          <%= link_to image_tag("noel", class: "avatar"), "#" %>
+          <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1544613517/v1/album/s0/0/23/79/24198411.jpg", class: "avatar"), genre_path(list_genres.id) %>
         <% else %>
-          <%= link_to image_tag("vnvd", class: "avatar"), "#" %>
+          <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1543390174/v1/album/s0/0/23/6/24123569.jpg", class: "avatar"), genre_path(list_genres.id) %>
         <% end %>
         <div class="card-body">
           <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
@@ -74,9 +74,9 @@
   </div>
   <aside class="col-md-3 hot-music">
     <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), song_path(@feed_items), class: "pb-3 asb" %>
-    <%= link_to image_tag("love-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
-    <%= link_to image_tag("vpop-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
-    <%= link_to image_tag("acoustic-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), "#", class: "pb-3 asb" %>
+    <%= link_to image_tag("love-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), song_path(@feed_items), class: "pb-3 asb" %>
+    <%= link_to image_tag("vpop-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), song_path(@feed_items), class: "pb-3 asb" %>
+    <%= link_to image_tag("acoustic-music.jpg", alt: (t ".hot-music"), height: 100, width: 260), song_path(@feed_items), class: "pb-3 asb" %>
   </aside>
 </div>
 
@@ -88,7 +88,7 @@
   <div class="col-md-9">
     <% @list_genres.each do |list_genres| %>
       <div class="card text-center mb-3" style="width:190px; height: 245px">
-        <%= link_to image_tag("noel.jpg", class: "card-img-top"), genre_path(list_genres.id) %>
+        <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/kv0puCNE4oNNfn7YhOpK/1537928467/v1/album/s2/0/21/432/22462718.jpg", class: "card-img-top"), genre_path(list_genres.id) %>
         <div class="card-body">
           <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
         </div>
