@@ -99,6 +99,7 @@ en:
       profile: Profile
       setting: Setting
       logout: Logout
+      no_noti: No notification
     static_pages:
       hot_topic: Hot topic
       hot_music: Hot music
@@ -112,6 +113,12 @@ en:
       all_songs: "Songs"
       for_you: "Recommend for you"
       cant_find: "Can't find any song"
+    new:
+      upload: Upload Song
+      confirm: Confirm
+    create:
+      success: "Upload success"
+      failed: "Upload failed"
     show:
       lyrics: "Lyrics: "
       comments_count: " Comments"
@@ -127,12 +134,17 @@ en:
     add_playlist:
       select_playlist: Select playlist
       select: Select
+      not_found: "Create playlist?"
+      add_playlist: "Create new playlist"
+      submit: "Submit"
     like:
       btn_like: Like
     dislike:
       btn_dislike: Dislike
     count_likes:
       like_count: Like
+    form:
+      not_found: "Singer not found? Click here"
 
   singers:
     show:
@@ -180,6 +192,11 @@ en:
     destroy:
       destroy: Song has been removed
       cant_destroy: Can't remove this song!
+
+  notifications:
+    notification:
+      commeted: "Someone commented in your song"
+      liked: "Someone liked your song"
 
   time:
     formats:

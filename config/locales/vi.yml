@@ -100,6 +100,7 @@ vi:
       profile: Thông tin
       setting: Cài đặt
       logout: Đăng xuất
+      no_noti: Không có thông báo
     static_pages:
       hot_topic: Chủ đề hot
       hot_music: Nhạc hot
@@ -113,6 +114,12 @@ vi:
       all_songs: "Bài hát"
       for_you: "Dành cho bạn"
       cant_find: "Không tìm thấy kết quả"
+    new:
+      upload: Tải lên
+      confirm: Xác nhận
+    create:
+      success: "Tải lên thành công"
+      failed: "Tải lên thất bại"
     show:
       lyrics: "Lời: "
       comments_count: "Nhận xét"
@@ -126,12 +133,17 @@ vi:
     add_playlist:
       select_playlist: Chọn danh sách phát
       select: Chọn
+      not_found: "Tạo danh sách mới?"
+      add_playlist: "Tạo danh sách mới"
+      submit: "Xác nhận"
     like:
       btn_like: Thích
     dislike:
       btn_dislike: Bỏ thích
     count_likes:
       like_count: Lượt thích
+    form:
+      not_found: "Không tìm thấy ca sĩ? Bấm vào đây"
 
   singers:
     show:
@@ -179,6 +191,11 @@ vi:
     destroy:
       destroy: Bài hát đã xóa khỏi playlist
       cant_destroy: Không thể xóa bài hát
+
+  notifications:
+    notification:
+      commeted: "Ai đó đã bình luận bài hát của bạn"
+      liked: "Ai đó đã thích bài hát của bạn"
 
   time:
     formats:

@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :logged_in_user, only: %i(create destroy)
+  before_action :authenticate_user!, only: %i(create destroy)
   before_action :correct_user, only: :destroy
   before_action :find_playlist, only: %i(edit show update)
 
@@ -9,14 +9,13 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = current_user.playlists.build playlist_params
+    @playlist = Playlist.new user_id: params[:user_id], name: params[:name]
 
     if @playlist.save
-      flash[:success] = t ".playlist_created"
-      redirect_to playlists_path
+      render json: {status: t(".success")}
     else
       @playlist_items = []
-      render "playlists/index"
+      render json: {status: t(".failed")}
     end
   end
 

@@ -1,8 +1,8 @@
 <li class="all-song">
   <div class="col-md-3">
     <%= link_to song do %>
-      <% if song.img_url %>
-        <%= image_tag song.img_url, width: 150 %>
+      <% if song.img_url.url %>
+        <%= image_tag song.img_url.url, width: 150 %>
       <% else %>
         <%= image_tag "play.png", width: 150 %>
       <% end %>
@@ -11,8 +11,10 @@
   <div class="col-md-9">
     <p class="song-title text-white">
       <%= link_to song.title, song %>
-      &nbsp - &nbsp
-      <%= link_to song.singer.name, song.singer %>
+      <% if song.singer %>
+        &nbsp; - &nbsp;
+        <%= link_to song.singer.name, song.singer %>
+      <% end %>
     </p>
 
     <p class="song-date text-white">
@@ -28,7 +30,7 @@
     <% if @playlist&.songs %>
       <div class="row mb-5">
         <audio controls loop>
-          <source src="<%= song.song_url %>" type="audio/mp3">
+          <source src="<%= song.song_url.url %>" type="audio/mp3">
         </audio>
       </div>
       <div class="mb-5 col-9 pl-0">

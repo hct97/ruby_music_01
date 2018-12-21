@@ -15,18 +15,30 @@
         <li class="active-pink-3 active-pink-4 mb-4 search-box">
           <%= form_tag songs_path, method: :get do %>
             <%= text_field_tag :search, params[:search], class: "search", placeholder: t(".search") %>
-            <%= submit_tag "Search", class: "search-button" %>
+            <%= submit_tag t(".search"), class: "search-button" %>
           <% end %>
         </li>
-        <% if current_user&.admin? %>
+        <% if current_user %>
           <li class="nav-item active">
-            <%= link_to t(".upload"), new_admin_song_url, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
+            <%= link_to t(".upload"), new_song_path, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
           </li>
         <% else %>
         <% end %>
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
+          </li>
+          <li class="nav-item active dropdown">
+              <a href="#" data-toggle="dropdown">
+                <i class="fa fa-bell mt-2" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu bg-dark">
+                <% if show_notifications.present? %>
+                  <%= render @notifications %>
+                <% else %>
+                  <span class="text-white"><%= t ".no_noti" %></span>
+                <% end %>
+              </ul>
           </li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",

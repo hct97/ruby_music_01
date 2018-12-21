@@ -2,6 +2,13 @@
 
 body {
   background: $midnightblue;
+  a {
+    color: $silver;
+    &:hover {
+      text-decoration: none;
+      color: orange;
+    }
+  }
 }
 /*---------------Nav-Top---------------*/
 .nav-top {
@@ -106,7 +113,7 @@ ol li {
   width: 200px;
   height: 200px;
   float: left;
-  background-image: url(playlist.png);
+  background-color: gray; 
   background-size: cover;
   margin: 0 3px 3px;
   text-align: center;
@@ -186,7 +193,7 @@ audio {
 
 
 .notice {
-  color: $green-notice;
+  color: black;
 }
 
 .vietnam-flag {
@@ -366,4 +373,21 @@ footer {
 
 .count-song {
   color: white;
+}
+
+.social-share-button .ssb-icon {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 46px !important;
+  display: inline-block !important;
+  height: 40px !important;
+  width: 50px !important;
+}
+.social-share-button {
+  right: 1px;
+  top: 0px;
+}
+
+.notification {
+  width: 300px
 }

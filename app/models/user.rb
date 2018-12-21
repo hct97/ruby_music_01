@@ -4,6 +4,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   enum role: {admin: 1, member: 0}
 
+  has_many :songs, dependent: :destroy
   has_many :playlists, dependent: :destroy
   has_many :comments
   has_many :liked, as: :likeable
