@@ -1,7 +1,10 @@
 class Song < ApplicationRecord
-  SONG_ATTRIBUTES = %i(singer_id title lyrics song_url view).freeze
+  SONG_ATTRIBUTES = %i(title lyrics song_url view img_url user_id)
+                    .push(singer_attributes: %i(name description)).freeze
 
-  belongs_to :singer
+  belongs_to :user
+  belongs_to :singer, optional: true
+  accepts_nested_attributes_for :singer, reject_if: :all_blank
   has_many :liked, as: :likeable
   has_many :comments, dependent: :destroy
   has_many :view_logs

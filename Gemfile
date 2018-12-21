@@ -5,6 +5,7 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap"
 gem "bootstrap4-kaminari-views"
+gem "cocoon"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"

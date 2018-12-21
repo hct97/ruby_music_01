@@ -112,6 +112,12 @@ en:
       all_songs: "Songs"
       for_you: "Recommend for you"
       cant_find: "Can't find any song"
+    new:
+      upload: Upload Song
+      confirm: Confirm
+    create:
+      success: "Upload success"
+      failed: "Upload failed"
     show:
       lyrics: "Lyrics: "
       comments_count: " Comments"
@@ -133,6 +139,8 @@ en:
       btn_dislike: Dislike
     count_likes:
       like_count: Like
+    form:
+      not_found: "Singer not found? Click here"
 
   singers:
     show:

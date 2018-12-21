@@ -18,9 +18,9 @@
             <%= submit_tag "Search", class: "search-button" %>
           <% end %>
         </li>
-        <% if current_user&.admin? %>
+        <% if current_user %>
           <li class="nav-item active">
-            <%= link_to t(".upload"), new_admin_song_url, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
+            <%= link_to t(".upload"), new_song_path, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
           </li>
         <% else %>
         <% end %>
