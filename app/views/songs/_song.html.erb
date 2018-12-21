@@ -11,8 +11,10 @@
   <div class="col-md-9">
     <p class="song-title text-white">
       <%= link_to song.title, song %>
-      &nbsp - &nbsp
-      <%= link_to song.singer.name, song.singer %>
+      <% if song.singer %>
+        &nbsp - &nbsp
+        <%= link_to song.singer.name, song.singer %>
+      <% end %>
     </p>
 
     <p class="song-date text-white">

@@ -113,6 +113,12 @@ vi:
       all_songs: "Bài hát"
       for_you: "Dành cho bạn"
       cant_find: "Không tìm thấy kết quả"
+    new:
+      upload: Tải lên
+      confirm: Xác nhận
+    create:
+      success: "Tải lên thành công"
+      failed: "Tải lên thất bại"
     show:
       lyrics: "Lời: "
       comments_count: "Nhận xét"
@@ -132,6 +138,8 @@ vi:
       btn_dislike: Bỏ thích
     count_likes:
       like_count: Lượt thích
+    form:
+      not_found: "Không tìm thấy ca sĩ? Bấm vào đây"
 
   singers:
     show:
