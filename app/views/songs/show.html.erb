@@ -49,7 +49,7 @@
           "btn btn-success text-capitalize", data: {toggle: "modal",
           target: "#add_playlist"} %>
       <% end %>
-      <%= link_to t(".download"), @song.song_url,
+      <%= link_to t(".download"), @song.song_url.url,
       class: "btn btn-info text-capitalize" %>
     </div>
 
@@ -60,8 +60,8 @@
           <ul class="list-items">
             <% @supports.list_songs.each do |list| %>
               <li class="items d-flex align-items-center">
-                <% if list.img_url %>
-                  <%= link_to image_tag(list.img_url, class: "avatar"), song_path(list.id) %>
+                <% if list.img_url.url %>
+                  <%= link_to image_tag(list.img_url.url, class: "avatar"), song_path(list.id) %>
                 <% else %>
                   <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
                 <% end %>
@@ -80,7 +80,7 @@
     <div class="col-9">
       <div class="mt-5">
         <audio controls loop>
-          <source src="<%= @song.song_url %>" type="audio/mp3">
+          <source src="<%= @song.song_url.url %>" type="audio/mp3">
         </audio>
       </div>
 
