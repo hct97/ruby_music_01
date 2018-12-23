@@ -132,6 +132,9 @@ vi:
     add_playlist:
       select_playlist: Chọn danh sách phát
       select: Chọn
+      not_found: "Tạo danh sách mới?"
+      add_playlist: "Tạo danh sách mới"
+      submit: "Xác nhận"
     like:
       btn_like: Thích
     dislike:

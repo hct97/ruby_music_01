@@ -44,7 +44,7 @@
         <% end %>
       </div>
 
-      <% if user_signed_in? && @playlist %>
+      <% if user_signed_in? %>
         <%= link_to t(".add_playlist"), "#", class:
           "btn btn-success text-capitalize", data: {toggle: "modal",
           target: "#add_playlist"} %>
@@ -128,7 +128,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if user_signed_in? && @playlist %>
+        <% if user_signed_in? %>
           <%= render "add_playlist" %>
         <% end %>
       </div>
