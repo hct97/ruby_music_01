@@ -106,7 +106,7 @@ ol li {
   width: 200px;
   height: 200px;
   float: left;
-  background-image: url(playlist.png);
+  background-image: url("https://res.cloudinary.com/trunghc/image/upload/v1545576012/Screenshot_from_2018-12-23_21-39-34.png");
   background-size: cover;
   margin: 0 3px 3px;
   text-align: center;
@@ -379,4 +379,10 @@ footer {
 .social-share-button {
   right: 1px;
   top: 0px;
+}
+
+.list-genres {
+  img {
+    width: 180px;
+  }
 }

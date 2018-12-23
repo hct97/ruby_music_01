@@ -11,8 +11,8 @@ class Song < ApplicationRecord
   has_many :genre_songs, dependent: :destroy
   has_many :genres, through: :genre_songs
 
-  mount_uploader :img_url, ImgUrlUploader
-  mount_uploader :song_url, SongUrlUploader
+  # mount_uploader :img_url, ImgUrlUploader
+  # mount_uploader :song_url, SongUrlUploader
 
   validates :title, presence: true,
     length: {maximum: Settings.title.max_length}
