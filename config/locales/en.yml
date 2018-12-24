@@ -133,6 +133,9 @@ en:
     add_playlist:
       select_playlist: Select playlist
       select: Select
+      not_found: "Create playlist?"
+      add_playlist: "Create new playlist"
+      submit: "Submit"
     like:
       btn_like: Like
     dislike:

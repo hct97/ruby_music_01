@@ -1,11 +1,46 @@
 <div class="notice"><%= notice %></div>
-<div class="add-song-to-playlist">
-  <%= form_with model: @playlist_song, url: playlist_songs_path do |f| %>
-    <%= hidden_field_tag :song_id, @song.id %>
-    <%= hidden_field_tag :user_id, current_user.id %>
-    <%= f.label :playlist_id, t(".select_playlist") %>
-    <%= f.select :playlist_id, options_for_select(@playlist.map(&:name)),
-      {class: "form-control"}, {include_blank: false} %>
+<div id="accordion">
+  <% if @playlist %>
+    <div class="card-header" id="headingOne">
+        <%= link_to t(".add_to_playlist"), "#", class:"btn btn-link", data: {toggle: "collapse", target: "#collapseOne"},
+          aria: {expanded: "true", controls: "collapseOne"} %>
+    </div>
 
-  <%= f.submit t(".select"), class: "btn btn-success form-control" %>
-<% end %>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <div class="add-song-to-playlist">
+          <%= form_with model: @playlist_song, url: playlist_songs_path do |f| %>
+            <%= hidden_field_tag :song_id, @song.id %>
+            <%= hidden_field_tag :user_id, current_user.id %>
+
+            <%= f.label :playlist_id, t(".select_playlist") %>
+            <%= f.select :playlist_id, options_for_select(@playlist.map(&:name)),
+              {class: "form-control"}, {include_blank: false} %>
+
+            <%= f.submit t(".select"), class: "btn btn-success form-control" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="card-header" id="headingTwo">
+    <h5 class="mb-0">
+      <%= link_to t(".add_playlist"), "#", class:"btn btn-link", data: {toggle: "collapse", target: "#collapseTwo"},
+        aria: {expanded: "true", controls: "collapseTwo"} %>
+    </h5>
+  </div>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div class="card-body">
+      <div class="add-playlist">
+        <%= form_with model: @playlist, url: playlists_path do |f| %>
+          <%= hidden_field_tag :user_id, current_user.id %>
+          <%= f.label :playlist_name %>
+          <%= f.text_field :name, class: "form-control" %>
+
+          <%= f.submit t(".submit"), class: "btn btn-success form-control" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
