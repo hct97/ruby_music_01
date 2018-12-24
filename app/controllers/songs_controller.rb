@@ -5,7 +5,7 @@ class SongsController < ApplicationController
   after_action :increase_view, only: :show
 
   def index
-    @songs = Song.search_song(params[:search])
+    @songs = Song.search_by_full_name(params[:search])
                  .page(params[:page]).per Settings.pages.per_page
     @list_songs = Song.first Settings.list_song
   end
