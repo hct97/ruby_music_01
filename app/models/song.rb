@@ -11,6 +11,8 @@ class Song < ApplicationRecord
   has_many :genre_songs, dependent: :destroy
   has_many :genres, through: :genre_songs
 
+  include PgSearch
+
   mount_uploader :img_url, ImgUrlUploader
   mount_uploader :song_url, SongUrlUploader
 
@@ -21,5 +23,5 @@ class Song < ApplicationRecord
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
   scope :hot_feed, ->{order view: :desc}
-  scope :search_song, ->(key_word){where("title LIKE ?", "%#{key_word}%")}
+  pg_search_scope :search_by_full_name, against: :title
 end
