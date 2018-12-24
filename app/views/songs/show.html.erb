@@ -51,6 +51,10 @@
       <% end %>
       <%= link_to t(".download"), @song.song_url.url,
       class: "btn btn-info text-capitalize" %>
+      <div class="mt-2">
+        <%= social_share_button_tag(@song.title,
+          allow_sites: %w(twitter facebook google_plus), desc: @song.title) %>
+      </div>
     </div>
 
     <% if @song.singer %>
