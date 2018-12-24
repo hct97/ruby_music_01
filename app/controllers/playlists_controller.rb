@@ -9,7 +9,7 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = current_user.playlists.build playlist_params
+    @playlist = Playlist.new user_id: params[:user_id], name: params[:name]
 
     if @playlist.save
       render json: {status: t(".success")}

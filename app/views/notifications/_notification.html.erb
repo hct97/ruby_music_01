@@ -1,0 +1,12 @@
+<li class="notification">
+  <% if notification.notifiable_type = "Comment" %>
+    <span class="text-white class mt-0 mb-0">
+      <%= link_to t(".commeted"), song_path(notification.notifiable_id) %>
+    </span>
+  <% else %>
+    <span>
+      <%= link_to t(".liked"), song_path(notification.notifiable_id) %>
+    </span>
+  <% end %>
+  <hr>
+</li>

@@ -2,6 +2,13 @@
 
 body {
   background: $midnightblue;
+  a {
+    color: $silver;
+    &:hover {
+      text-decoration: none;
+      color: orange;
+    }
+  }
 }
 /*---------------Nav-Top---------------*/
 .nav-top {
@@ -379,4 +386,8 @@ footer {
 .social-share-button {
   right: 1px;
   top: 0px;
+}
+
+.notification {
+  width: 300px
 }

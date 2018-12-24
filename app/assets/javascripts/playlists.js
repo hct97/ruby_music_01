@@ -2,6 +2,7 @@ $(document).on('turbolinks:load',function(){
   $('.add-playlist').on('submit',function(e){
     e.preventDefault();
     playlist_name = $('#playlist_name').val();
+    user_id = $('#user_id').val();
     url = $('.add-playlist form').attr('action');
 
     $.ajax({

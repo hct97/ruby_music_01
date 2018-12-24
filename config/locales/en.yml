@@ -99,6 +99,7 @@ en:
       profile: Profile
       setting: Setting
       logout: Logout
+      no_noti: No notification
     static_pages:
       hot_topic: Hot topic
       hot_music: Hot music
@@ -191,6 +192,11 @@ en:
     destroy:
       destroy: Song has been removed
       cant_destroy: Can't remove this song!
+
+  notifications:
+    notification:
+      commeted: "Someone commented in your song"
+      liked: "Someone liked your song"
 
   time:
     formats:

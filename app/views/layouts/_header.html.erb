@@ -28,6 +28,18 @@
           <li class="nav-item active">
             <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
           </li>
+          <li class="nav-item active dropdown">
+              <a href="#" data-toggle="dropdown">
+                <i class="fa fa-bell mt-2" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu bg-dark">
+                <% if show_notifications.present? %>
+                  <%= render @notifications %>
+                <% else %>
+                  <span class="text-white"><%= t ".no_noti" %></span>
+                <% end %>
+              </ul>
+          </li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",
               data: {toggle: "dropdown"} do %>
