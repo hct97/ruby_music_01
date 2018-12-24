@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  SONG_ATTRIBUTES = %i(title lyrics song_url view img_url user_id)
+  SONG_ATTRIBUTES = %i(singer_id title lyrics song_url view img_url user_id)
                     .push(singer_attributes: %i(name description)).freeze
 
   belongs_to :user
@@ -11,10 +11,12 @@ class Song < ApplicationRecord
   has_many :genre_songs, dependent: :destroy
   has_many :genres, through: :genre_songs
 
+  mount_uploader :img_url, ImgUrlUploader
+  mount_uploader :song_url, SongUrlUploader
+
   validates :title, presence: true,
     length: {maximum: Settings.title.max_length}
-  validates :song_url, presence: true,
-    uniqueness: true
+  validates :song_url, presence: true
   validates :view, numericality: true
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
