@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   before_action :find_song, only: :show
   before_action :support, only: :show
   before_action :authenticate_user!, only: %i(new create)
+  after_action :increase_view, only: :show
 
   def index
     @songs = Song.search_song(params[:search])
@@ -49,5 +50,10 @@ class SongsController < ApplicationController
 
   def support
     @supports ||= Supports::SongSupport.new @song, current_user, params[:page]
+  end
+
+  def increase_view
+    @song.increment! :view
+    @song.save
   end
 end
