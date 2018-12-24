@@ -67,7 +67,7 @@
                 <% if list.img_url.url %>
                   <%= link_to image_tag(list.img_url.url, class: "avatar"), song_path(list.id) %>
                 <% else %>
-                  <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
+                  <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545652052/play.png", class: "avatar"), song_path(list.id) %>
                 <% end %>
                 <div class="present">
                   <%= link_to list.title, song_path(list.id), class: "name" %>

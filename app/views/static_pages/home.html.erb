@@ -45,13 +45,25 @@
 </div>
 
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 list-genres">
     <% @list_genres.each.with_index(0) do |list_genres, index| %>
       <div class="card text-center mb-3" style="width:190px; height: 245px">
-        <% if index % 2 == 0 %>
-          <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1544613517/v1/album/s0/0/23/79/24198411.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% if index == 1 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576011/847.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 2 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576011/22136906.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 3 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576011/21276374.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 4 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576011/172641.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 5 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576012/23802257.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 6 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576012/22462718.jpg", class: "avatar"), genre_path(list_genres.id) %>
+        <% elsif index == 7 %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576012/Screenshot_from_2018-12-23_21-39-34.png", class: "avatar"), genre_path(list_genres.id) %>
         <% else %>
-          <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/jXitUPK9cvjCkkVYrFPL/200x200x1543390174/v1/album/s0/0/23/6/24123569.jpg", class: "avatar"), genre_path(list_genres.id) %>
+          <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576012/1.jpg", class: "avatar"), genre_path(list_genres.id) %>
         <% end %>
         <div class="card-body">
           <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
@@ -75,7 +87,7 @@
   <div class="col-md-9">
     <% @list_genres.each do |list_genres| %>
       <div class="card text-center mb-3" style="width:190px; height: 245px">
-        <%= link_to image_tag("https://109cdf7de.vws.vegacdn.vn/kv0puCNE4oNNfn7YhOpK/1537928467/v1/album/s2/0/21/432/22462718.jpg", class: "card-img-top"), genre_path(list_genres.id) %>
+        <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545576012/1.jpg", class: "card-img-top"), genre_path(list_genres.id) %>
         <div class="card-body">
           <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
         </div>
