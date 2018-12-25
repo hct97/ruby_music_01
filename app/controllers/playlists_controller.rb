@@ -9,13 +9,25 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.new user_id: params[:user_id], name: params[:name]
+    @song = Song.find_by id: params[:song_id] if params[:song_id]
+    @playlists = current_user.playlists
+
+    if params["playlist"].present?
+      @playlist = Playlist.new user_id: params[:user_id], name: (params["playlist"]["name"])
+    else
+      @playlist = Playlist.new user_id: params[:user_id], name: (params[:name])
+    end
 
     if @playlist.save
-      render json: {status: t(".success")}
+      respond_to do |format|
+        format.html{redirect_to @song}
+        format.js{flash.now[:notice] = t ".success"}
+      end
     else
-      @playlist_items = []
-      render json: {status: t(".failed")}
+      respond_to do |format|
+        format.html{redirect_to @song}
+        format.js{flash.now[:notice] = t ".failed"}
+      end
     end
   end
 

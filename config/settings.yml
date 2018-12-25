@@ -8,8 +8,8 @@ email:
 pages:
   per_page: 10
   feed: 5
-user: 
-  name: 
+user:
+  name:
     length: 20
   email:
     length: 50
@@ -23,3 +23,5 @@ per_page: 10
 list_song: 10
 list_genre: 8
 list_song_slider: 3
+noti: 5
+file_size: 5

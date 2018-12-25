@@ -1,15 +1,26 @@
 class PlaylistSongsController < ApplicationController
   def create
-    @playlist = Playlist.find_by name: params[:playlist_id],
-      user_id: params[:user_id]
+    @playlists = current_user.playlists
+
+    if params["playlist_song"].present?
+      @playlist = Playlist.find_by name: params["playlist_song"]["playlist_id"],
+        user_id: params[:user_id]
+    else
+      @playlist = Playlist.find_by name: params[:playlist_id],
+        user_id: params[:user_id]
+    end
     @song = Song.find_by id: params[:song_id]
     @playlist_song = PlaylistSong.new playlist_id: @playlist.id,
       song_id: @song.id
 
     if @playlist_song.save
-      render json: {status: t(".success")}
+      respond_to do |format|
+        format.js{flash.now[:notice] = t ".success"}
+      end
     else
-      render json: {status: t(".failed")}
+      respond_to do |format|
+        format.js{flash.now[:notice] = t ".failed"}
+      end
     end
   end
 

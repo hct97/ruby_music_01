@@ -1,0 +1,6 @@
+$('.modal-body').html('<%= j render "songs/add_playlist" %>');
+$(".notice").html("<%= flash.now[:notice] %>");
+setTimeout(function(){
+  $('.notice').html('');
+  $('#add_playlist').modal('hide')
+},1000);

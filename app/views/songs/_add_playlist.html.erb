@@ -1,6 +1,6 @@
 <div class="notice"><%= notice %></div>
 <div id="accordion">
-  <% if @playlist %>
+  <% if @playlists %>
     <div class="card-header" id="headingOne">
         <%= link_to t(".add_to_playlist"), "#", class:"btn btn-link", data: {toggle: "collapse", target: "#collapseOne"},
           aria: {expanded: "true", controls: "collapseOne"} %>
@@ -9,12 +9,12 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
         <div class="add-song-to-playlist">
-          <%= form_with model: @playlist_song, url: playlist_songs_path do |f| %>
+          <%= form_with model: @playlist_song, url: playlist_songs_path, method: :post do |f| %>
             <%= hidden_field_tag :song_id, @song.id %>
             <%= hidden_field_tag :user_id, current_user.id %>
 
             <%= f.label :playlist_id, t(".select_playlist") %>
-            <%= f.select :playlist_id, options_for_select(@playlist.map(&:name)),
+            <%= f.select :playlist_id, options_for_select(@playlists.map(&:name)),
               {class: "form-control"}, {include_blank: false} %>
 
             <%= f.submit t(".select"), class: "btn btn-success form-control" %>
@@ -33,8 +33,9 @@
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
     <div class="card-body">
       <div class="add-playlist">
-        <%= form_with model: @playlist, url: playlists_path do |f| %>
+        <%= form_with model: @playlist, url: playlists_path, method: :post do |f| %>
           <%= hidden_field_tag :user_id, current_user.id %>
+          <%= hidden_field_tag :song_id, @song.id %>
           <%= f.label :playlist_name %>
           <%= f.text_field :name, class: "form-control" %>
 

@@ -10,7 +10,7 @@
           <%= link_to t(".all_song"), songs_url, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
         </li>
         <li class="nav-item">
-          <%= link_to t(".collection"), "#", class: "nav-link home-link collec-link text-white h-100 pt-2 pl-2" %>
+          <%= link_to t(".collection"), songs_url, class: "nav-link home-link collec-link text-white h-100 pt-2 pl-2" %>
         </li>
         <li class="active-pink-3 active-pink-4 mb-4 search-box">
           <%= form_tag songs_path, method: :get do %>
@@ -62,54 +62,6 @@
             <%= link_to t(".sign_up"), new_user_registration_path, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
           </li>
         <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<nav class="navbar nav-2 navbar-expand-lg">
-  <div class="container">
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <%= link_to t(".top-100"), "#", class: "nav-link", id: "navbarDropdownMenuLink",
-            data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to t(".vietnam"), "#", class: "dropdown-item" %>
-            <%= link_to t(".us-uk"), "#", class: "dropdown-item" %>
-            <%= link_to t(".asia"), "#", class: "dropdown-item" %>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <%= link_to t(".collection"), "#", class: "nav-link", id: "navbarDropdownMenuLink",
-            data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to t(".edm"), "#", class: "dropdown-item" %>
-            <%= link_to t(".acostic"), "#", class: "dropdown-item" %>
-            <%= link_to t(".year"), "#", class: "dropdown-item" %>
-            <%= link_to t(".coffe"), "#", class: "dropdown-item" %>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <%= link_to t(".album"), "#", class: "nav-link", id: "navbarDropdownMenuLink",
-            data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to t(".vietnam"), "#", class: "dropdown-item" %>
-            <%= link_to t(".us-uk"), "#", class: "dropdown-item" %>
-            <%= link_to t(".asia"), "#", class: "dropdown-item" %>
-            <%= link_to t(".concert"), "#", class: "dropdown-item" %>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <%= link_to t(".artist"), "#", class: "nav-link", id: "navbarDropdownMenuLink",
-            data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to t(".vietnam"), "#", class: "dropdown-item" %>
-            <%= link_to t(".us-uk"), "#", class: "dropdown-item" %>
-            <%= link_to t(".korea"), "#", class: "dropdown-item" %>
-            <%= link_to t(".japan"), "#", class: "dropdown-item" %>
-          </div>
-        </li>
       </ul>
     </div>
   </div>

@@ -1,9 +1,6 @@
 <% if user_signed_in? %>
   <div class="row">
-    <aside class="col-md-4">
-      <%= render "shared/create_playlist" %>
-    </aside>
-    <div class="col-md-8 text-center">
+    <div class="col-md-8 mx-auto text-center">
       <h3 class="mx-auto text-white font-weight-bold w-50 py-4 pt-5"><%= t ".playlist" %></h3>
       <%= render "shared/list_playlist" %>
     </div>

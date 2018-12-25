@@ -34,11 +34,14 @@ vi:
       playlist_updated: "Danh sách phát đã được cập nhật"
       update_faild: "Cập nhật lỗi"
     create:
-      playlsit_created: "Tạo mới danh sách phát thành công"
+      success: "Tạo mới danh sách phát thành công"
+      failed: "Không tạo được playlist"
     playlist:
       you_sure: "Are you sure?"
     index:
       playlist: Danh sách phát
+    show:
+      no_song: "Không tìm thấy bài hát trong playlist, hãy chọn và thềm bài hát!"
   sessions:
     create:
       invalid: Email hoặc mật khẩu không đúng
@@ -70,6 +73,8 @@ vi:
       create-account: Tạo tài khoản mới
     show:
       not_found: "Không tìm thấy người dùng"
+      my_song: "Bài hát của tôi"
+      not_found: "Không tìm thấy bài hát nào!"
 
   layouts:
     application:
@@ -120,6 +125,15 @@ vi:
     create:
       success: "Tải lên thành công"
       failed: "Tải lên thất bại"
+    edit:
+      save: Lưu
+      edit: Sửa bài hát
+    update:
+      success: Bài hát đã được sửa
+      failed: Sửa không thành công
+    destroy:
+      success: Xóa bài hát thành công
+      failed: Không thể xóa bài hát
     show:
       lyrics: "Lời: "
       comments_count: "Nhận xét"
@@ -194,8 +208,25 @@ vi:
 
   notifications:
     notification:
-      commeted: "Ai đó đã bình luận bài hát của bạn"
-      liked: "Ai đó đã thích bài hát của bạn"
+      commeted: "Bài hát của bạn đã được bình luận"
+      liked: "Bài hát của bạn đã được thích"
+
+  activerecord:
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              blank: "không được để trống"
+              too_long: "Tên bài hát quá dài"
+            song_url:
+              blank: "không được để trống"
+        singer:
+          attributes:
+            name:
+              too_long: "Tên ca sĩ quá dài"
+
+  out_of_size: "Không được vượt quá 5MB"
 
   time:
     formats:

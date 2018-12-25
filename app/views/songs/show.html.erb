@@ -1,7 +1,11 @@
 <div class="content">
   <div class="row mt-5">
     <div class="col-3">
-      <%= image_tag "play_music_circle.png", class: "w-100 rotate-img"%>
+      <% if @song.img_url.present? %>
+        <%= image_tag @song.img_url.url, class: "rounded w-100"%>
+      <% else %>
+        <%= image_tag "images.png", class: "w-100 rotate-img"%>
+      <% end %>
     </div>
 
     <div class="col-6">
@@ -67,7 +71,7 @@
                 <% if list.img_url.url %>
                   <%= link_to image_tag(list.img_url.url, class: "avatar"), song_path(list.id) %>
                 <% else %>
-                  <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
+                  <%= link_to image_tag("https://res.cloudinary.com/trunghc/image/upload/v1545652052/play.png", class: "avatar"), song_path(list.id) %>
                 <% end %>
                 <div class="present">
                   <%= link_to list.title, song_path(list.id), class: "name" %>
@@ -90,9 +94,7 @@
 
       <div class="mt-5 mb-5">
         <p class="text-success"><%= t ".lyrics" %></p>
-        <p class="text-white">
-          <%= @song.lyrics %>
-        </p>
+        <%= simple_format @song.lyrics, class: "text-white" %>
       </div>
     </div>
   </div>
@@ -109,7 +111,7 @@
     <% end %>
     <%= render "comments/count_comment", song: @song %>
     <ul class="comments">
-      <div class="notice"></div>
+      <div class="notice text-success"></div>
       <div class="div-create">
         <%= render @supports.comments %>
       </div>
