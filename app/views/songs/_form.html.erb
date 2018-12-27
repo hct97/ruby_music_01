@@ -5,13 +5,13 @@
   <%= f.text_field :title, class: "form-control" %>
 
   <%= f.label :img, class: "text-white" %>
-  <%= f.file_field :img_url, class: "text-white" %>
+  <%= f.file_field :img_url, class: "text-white", accept: "image/png,image/jpeg" %>
 
   <%= f.label :lyrics, class: "text-white" %>
   <%= f.text_area :lyrics, class: "form-control" %>
 
   <%= f.label :song_url, class: "text-white" %>
-  <%= f.file_field :song_url, class: "text-white" %>
+  <%= f.file_field :song_url, class: "text-white", accept: "audio/mp3" %>
 
 
   <%= f.label :singer, class: "text-white" %>

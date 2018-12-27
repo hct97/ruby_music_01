@@ -2,9 +2,7 @@
   <h5 class="name_playlist mx-auto pt-3 font-weight-bold">
     <%= link_to playlist.name, (playlist_path playlist.id), class: "text-danger" %>
   </h5>
-  <span class="float-left pl-4 pt-5">
-     <%= link_to t(".update"), edit_playlist_path(playlist), class: "text-danger" %>
-  </span>
+
   <span class="d-block pt-5">
     <%= link_to t(".delete"), playlist, method: :delete,
                                         data: {confirm: t(".you_sure")}, class: "text-danger" %>

@@ -34,11 +34,14 @@ en:
       playlist_updated: "Playlist Updated"
       update_faild: "Update fail"
     create:
-      playlist_created: "Playlist created"
+      success: "Playlist created"
+      failed: "Failed"
     playlist:
       you_sure: "Are you sure?"
     index:
       playlist: Playlist
+    show:
+      no_song: "No song in playlist, please add!"
   sessions:
     create:
       invalid: Invalid email or password
@@ -70,6 +73,8 @@ en:
       create-account: Create new account
     show:
       not_found: "Can't find user"
+      my_song: "My Songs"
+      not_found: "Not found any song!"
 
   layouts:
     application:
@@ -119,6 +124,15 @@ en:
     create:
       success: "Upload success"
       failed: "Upload failed"
+    edit:
+      save: Save
+      edit: Edit Song
+    update:
+      success: Song edited
+      failed: Failed
+    destroy:
+      success: Destroy Success
+      failed: Destroy Failed
     show:
       lyrics: "Lyrics: "
       comments_count: " Comments"
@@ -195,8 +209,10 @@ en:
 
   notifications:
     notification:
-      commeted: "Someone commented in your song"
-      liked: "Someone liked your song"
+      commeted: "Your song has been commented"
+      liked: "Your song has been liked"
+
+  out_of_size: "should be less than 5MB"
 
   time:
     formats:

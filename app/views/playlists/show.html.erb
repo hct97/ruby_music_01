@@ -1,10 +1,14 @@
-<div class="content">
+<div class="content", style="min-height: 500px">
   <div class="mt-5">
     <h2 class="text-center text-white"><%= @playlist.name %></h2>
   </div>
-  <% if @playlist&.songs %>
-    <ul>
-      <%= render @playlist.songs %>
-    </ul>
+  <% if @playlist&.songs.any? %>
+      <ul>
+        <%= render @playlist.songs %>
+      </ul>
+  <% else %>
+    <h3 class="font-italic text-white">
+      <%= t ".no_song" %>
+    </h3>
   <% end %>
 </div>

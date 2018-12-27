@@ -1,5 +1,5 @@
 <li class="notification">
-  <% if notification.notifiable_type = "Comment" %>
+  <% if notification.notifiable_type == "Comment" %>
     <span class="text-white class mt-0 mb-0">
       <%= link_to t(".commeted"), song_path(notification.notifiable_id) %>
     </span>

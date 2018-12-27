@@ -1,49 +1,54 @@
 <li class="all-song">
-  <div class="col-md-3">
-    <%= link_to song do %>
-      <% if song.img_url.url %>
-        <%= image_tag song.img_url.url, width: 150 %>
-      <% else %>
-        <%= image_tag "play.png", width: 150 %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="col-md-9">
-    <p class="song-title text-white">
-      <%= link_to song.title, song %>
-      <% if song.singer %>
-        &nbsp; - &nbsp;
-        <%= link_to song.singer.name, song.singer %>
-      <% end %>
-    </p>
-
-    <p class="song-date text-white">
-      <%= t "songs.post_at" %>
-      <%= l song.created_at %>
-    </p>
-
-    <p class="song-view text-white">
-      <%= t "songs.view" %>
-      <%= song.view %>
-    </p>
-
-    <% if @playlist&.songs %>
-      <div class="row mb-5">
-        <audio controls loop>
-          <source src="<%= song.song_url.url %>" type="audio/mp3">
-        </audio>
-      </div>
-      <div class="mb-5 col-9 pl-0">
-        <%= form_with url: playlist_song_path, :method => :delete do %>
-          <%= hidden_field_tag :song_id, song.id %>
-          <%= submit_tag t(".remove_playlist"), class: "btn btn-danger text-capitalize" %>
+  <div class="row col-12">
+    <div class="col-md-3">
+      <%= link_to song do %>
+        <% if song.img_url.url %>
+          <%= image_tag song.img_url.url, width: 150 %>
+        <% else %>
+          <%= image_tag "play.png", width: 150 %>
         <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <div class="row col-12 ml-1">
+        <p class="song-title text-white row">
+          <%= link_to song.title, song %>
+          <% if song.singer %>
+            &nbsp - &nbsp
+            <%= link_to song.singer.name, song.singer %>
+          <% end %>
+        </p>
       </div>
-    <% end %>
-    <% if current_user&.admin? %>
-      <%= link_to t(".edit"), edit_admin_song_path(song), class: "btn btn-info" %>
-      <%= link_to t(".delete"), admin_song_path(song), class: "btn btn-danger",
-        method: :delete, data: {confirm: t(".confirm")} %>
-    <% end %>
+
+
+      <p class="song-date text-white">
+        <%= t "songs.post_at" %>
+        <%= l song.created_at %>
+      </p>
+
+      <p class="song-view text-white">
+        <%= t "songs.view" %>
+        <%= song.view %>
+      </p>
+
+      <% if @playlist&.songs %>
+        <div class="row mb-5">
+          <audio controls loop>
+            <source src="<%= song.song_url.url %>" type="audio/mp3">
+          </audio>
+        </div>
+        <div class="mb-5 col-9 pl-0">
+          <%= form_with url: playlist_song_path, :method => :delete do %>
+            <%= hidden_field_tag :song_id, song.id %>
+            <%= submit_tag t(".remove_playlist"), class: "btn btn-danger text-capitalize" %>
+          <% end %>
+        </div>
+      <% end %>
+      <% if song.user == current_user %>
+        <%= link_to t(".edit"), edit_song_path(song), class: "btn btn-info" %>
+        <%= link_to t(".delete"), song_path(song), class: "btn btn-danger",
+          method: :delete, data: {confirm: t(".confirm")} %>
+      <% end %>
+    </div>
   </div>
 </li>
