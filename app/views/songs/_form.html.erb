@@ -1,8 +1,8 @@
 <%= form_with model: @song, local: true do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.label :title, class: "text-white" %>
-  <%= f.text_field :title, class: "form-control" %>
+  <%= f.label :title, class: "text-white require" %>
+  <%= f.text_field :title, class: "form-control", required: true %>
 
   <%= f.label :img, class: "text-white" %>
   <%= f.file_field :img_url, class: "text-white", accept: "image/jpeg,image/png" %>
@@ -10,8 +10,8 @@
   <%= f.label :lyrics, class: "text-white" %>
   <%= f.text_area :lyrics, class: "form-control" %>
 
-  <%= f.label :song, class: "text-white" %>
-  <%= f.file_field :song_url, class: "text-white", accept: "audio/mp3" %>
+  <%= f.label :song, class: "text-white require" %>
+  <%= f.file_field :song_url, class: "text-white", accept: "audio/mp3", required: true %>
 
   <%= f.label :singer, class: "text-white" %>
   <%= f.collection_select :singer_id, Singer.order(:name), :id, :name ,class: "form-control", include_blank: true %>
@@ -26,7 +26,7 @@
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
           <%= f.fields_for :singer, local: true do |ff| %>
-            <%= ff.label :singer_name, class: "text-white" %>
+            <%= ff.label :singer_name, class: "text-white required" %>
             <%= ff.text_field :name, class: "form-control" %>
 
             <%= ff.label :singer_description, class: "text-white" %>

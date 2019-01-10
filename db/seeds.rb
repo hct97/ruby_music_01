@@ -16,6 +16,10 @@ Singer.create! name: "The Men",
 Singer.create! name: "Andiez",
               description: Faker::Lorem.sentence(5)
 
+User.create! name: "ADMIN",
+             password: "123456",
+             email: "huynhchitrung97@gmail.com",
+             role: 1
 
 3.times do |n|
   name = Faker::Name.name
@@ -149,11 +153,6 @@ end
   GenreSong.create! genre_id: rand(1..5),
                     song_id: rand(5..15)
 end
-
-User.create! name: "ADMIN",
-             password: "123456",
-             email: "huynhchitrung97@gmail.com",
-             role: 1
 
 10.times do |n|
   name = Faker::Name.last_name

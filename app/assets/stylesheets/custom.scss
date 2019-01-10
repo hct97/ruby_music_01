@@ -111,7 +111,7 @@ ol li {
   width: 200px;
   height: 200px;
   float: left;
-  background-image: url(playlist.png);
+  background-image: url("https://res.cloudinary.com/trunghc/image/upload/v1545576012/Screenshot_from_2018-12-23_21-39-34.png");
   background-size: cover;
   margin: 0 3px 3px;
   text-align: center;
@@ -362,7 +362,7 @@ footer {
 
 .show-recommend {
   .list-items {
-    height: 350px;
+    min-height: 365px;
   }
 }
 
@@ -424,4 +424,27 @@ footer {
 
 .min-height {
   min-height: 500px;
+}
+
+.lyrics {
+  border: solid gray;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.text-lyrics {
+  color: green;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.content-lyrics {
+  word-wrap: break-word;
+}
+
+.require {
+  &::after {
+    color: $red;
+    content: ' *';
+  }
 }

@@ -71,7 +71,7 @@
                 <% if list.img_url.url %>
                   <%= link_to image_tag(list.img_url.url, class: "avatar"), song_path(list.id) %>
                 <% else %>
-                  <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
+                  <%= link_to image_tag("play_music_circle.png", class: "avatar"), song_path(list.id) %>
                 <% end %>
                 <div class="present">
                   <%= link_to list.title, song_path(list.id), class: "name" %>
@@ -92,9 +92,9 @@
         </audio>
       </div>
 
-      <div class="mt-5 mb-5">
-        <p class="text-success"><%= t ".lyrics" %></p>
-        <%= simple_format @song.lyrics, class: "text-white" %>
+      <div class="mt-5 mb-5 lyrics">
+        <p class="text-lyrics"><%= t ".lyrics" %></p>
+        <%= simple_format @song.lyrics, class: "text-white content-lyrics" %>
       </div>
     </div>
   </div>

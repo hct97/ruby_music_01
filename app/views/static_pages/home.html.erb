@@ -8,13 +8,19 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= link_to image_tag("vntl.jpg", class: "w-100"), "#" %>
+          <%= link_to root_url do %>
+            <%= image_tag("vntl.jpg", class: "w-100") %>
+          <% end %>
         </div>
         <div class="carousel-item">
-          <%= link_to image_tag("gglc.jpg", class: "w-100"), "#" %>
+          <%= link_to root_url do %>
+            <%= image_tag("gglc.jpg", class: "w-100") %>
+          <% end %>
         </div>
         <div class="carousel-item">
-          <%= link_to image_tag("vntl.jpg", class: "w-100"), "#" %>
+          <%= link_to root_url do %>
+            <%= image_tag("vntl.jpg", class: "w-100") %>
+          <% end %>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -50,35 +56,35 @@
       <div class="card text-center mb-3 item" >
         <% if index == 0 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("pop", class: :avatar) %>
+            <%= image_tag("pop.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 1 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("cover", class: :avatar) %>
+            <%= image_tag("cover.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 2 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("rock", class: :avatar) %>
+            <%= image_tag("rock.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 3 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("nhachay", class: :avatar) %>
+            <%= image_tag("nhachay.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 4 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("muadong", class: :avatar) %>
+            <%= image_tag("muadong.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 5 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("bolero", class: :avatar) %>
+            <%= image_tag("bolero.jpg", class: :avatar) %>
           <% end %>
         <% elsif index == 6 %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("duelts", class: :avatar) %>
+            <%= image_tag("duelts.jpg", class: :avatar) %>
           <% end %>
         <% else %>
           <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("img-playlist", class: :avatar) %>
+            <%= image_tag("img-playlist.png", class: :avatar) %>
           <% end %>
         <% end %>
         <div class="card-body">
@@ -104,7 +110,7 @@
     <% @list_genres.each do |list_genres| %>
       <div class="card text-center mb-3" style="width:190px; height: 245px">
         <%= link_to genre_path list_genres.id do %>
-          <%= image_tag("best-of-all", class: "card-img-top") %>
+          <%= image_tag("best-of-all.jpg", class: "card-img-top") %>
         <% end %>
         <div class="card-body">
           <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>

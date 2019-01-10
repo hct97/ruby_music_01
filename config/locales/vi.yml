@@ -230,6 +230,22 @@ vi:
             name:
               too_long: "Tên ca sĩ quá dài"
               taken: "Tên ca sĩ đã tồn tại"
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+              too_long: "Tên quá dài"
+            email:
+              blank: "Email không được để trống"
+              invalid: "Email không hợp lệ"
+              too_long: "Email quá dài"
+              taken: "Email đã tồn tại"
+            password:
+              blank: "Mật khẩu không được để trống"
+              too_short: "Mật khẩu quá ngắn"
+              too_long: "Mật khẩu quá dài"
+            password_confirmation:
+              confirmation: "Mật khẩu xác nhận không giống"
 
   errors:
     messages:

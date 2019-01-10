@@ -64,7 +64,8 @@ class PlaylistsController < ApplicationController
 
   def find_song_and_playlists_on_create
     @song = Song.find_by id: params[:song_id] if params[:song_id]
-    @playlists = current_user.playlists
+    return unless current_user.playlists
+    @playlists = current_user.playlists.order_desc
   end
 
   def find_playlist_on_create
