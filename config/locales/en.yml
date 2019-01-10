@@ -217,6 +217,38 @@ en:
       liked: "Your song has been liked"
   out_of_size: "should be less than 5MB"
 
+  activerecord:
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              blank: "title can't be blank"
+              too_long: "title too long"
+            song_url:
+              blank: "song can't be blank"
+        singer:
+          attributes:
+            name:
+              too_long: "singer name too long"
+              taken: "singer name has been taken"
+        user:
+          attributes:
+            name:
+              blank: "user name can't be blank"
+              too_long: "too long"
+            email:
+              blank: "email can't be blank"
+              invalid: "email invalid"
+              too_long: "email too long"
+              taken: "email has been taken"
+            password:
+              blank: "password can't be blank"
+              too_short: "password too short"
+              too_long: "password too long"
+            password_confirmation:
+              confirmation: "confirmation doesn't match Password"
+
   time:
     formats:
       default: "%d/%m/%Y"

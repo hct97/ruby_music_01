@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  prepend_before_action :check_captcha, only: [:create]
 
   def new
     super
@@ -35,4 +36,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def check_captcha
+    return if verify_recaptcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    set_minimum_password_length
+    respond_with resource
+  end
 end
